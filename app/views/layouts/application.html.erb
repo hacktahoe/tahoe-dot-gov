@@ -102,5 +102,10 @@
     <%- unless customization_disabled? %>
       <%= raw SiteCustomization.custom_body_tag(session[:preview_style]) %>
     <%- end %>
+
+
+    <!-- code added to inject tahoe.gov banner -->
+    <pre><%#= params.inspect %></pre>
+    <%= render :partial => "banner" if params[:action] == 'latest' %>
   </body>
 </html>
